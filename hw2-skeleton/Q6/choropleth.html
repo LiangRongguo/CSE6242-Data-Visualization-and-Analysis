@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>
+	Q6 rliang37 CSE6242
+</title>
+
+<link rel="stylesheet" href="choropleth.css"/>
+
+<body>
+	<script src="../lib/d3.v5.min.js"></script>
+	<script src="../lib/d3-scale-chromatic.v1.min.js"></script>
+	<script src="../lib/topojson.v2.min.js"></script>
+	<script src="../lib/d3-tip.min.js"></script>
+	<script src="../lib/d3-simple-slider.min.js"></script>
+
+	<div id = "t">
+		<p id="t-Year">Year</p><div id="slider-year"></div>
+	</div>
+
+<script>
+
+var margin = {
+	left: 50,
+	right: 50,
+	bottom: 50,
+	top: 50
+};
+
+var width = 960;   //-margin.right-margin.left;
+var height = 480;   //-margin.top-margin.bottom;
+
+var colorScheme = d3.schemeBlues[9];
+
+var svg=d3
+	.select("body")
+	.append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height",height + margin.top + margin.right)
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// year on x-axis
+var dataTime = d3.range(0, 6).map(function(d) {
+	return new Date(2010 + d, 1, 1);
+});
+
+var projection = d3.geoAlbersUsa()
+	.scale(800)
+	.translate([400, 200]);
+
+var path = d3.geoPath()
+			 .projection(projection);
+
+var promises = [
+	d3.json("states-10m.json"),
+	d3.csv("state-earthquakes.csv")
+]
+
+var year = 2010;
+
+// slider bottom
+var sliderTime = d3
+	.sliderBottom()
+	.min(new Date(2010, 1, 1))
+	.max(new Date(2015, 1, 1))
+	.step(1000 * 60 * 60 * 24 * 365)
+	.width(300)
+	.tickFormat(d3.timeFormat('%Y'))
+	.tickValues(dataTime)
+	.default(new Date(2010, 1, 1))
+	.on('onchange', show);
+
+function show(){
+	d3.selectAll(".legend")
+	  .remove();
+	year = d3.timeFormat('%Y')(sliderTime.value());
+	display(states_10m, state_earthquakes, year);
+} 
+
+var gTime = d3
+	.select('div#slider-year')
+	.append('svg')
+	.attr('width', 480)
+	.attr('height', 100)
+	.append('g')
+	.attr('transform', 'translate(40,40)');
+
+gTime.call(sliderTime);
+
+Promise.all(promises).then(function(array) {
+	states_10m = array[0];
+	state_earthquakes = array[1];
+	display(states_10m, state_earthquakes, year);
+});
+
+function display(states_10m, state_earthquakes, year){
+	var earthquakeTimes = {};
+	var allTime = [];
+	var info = {};
+	
+	state_earthquakes.forEach(function(d){
+		earthquakeTimes[d.States] = +d[year];
+		allTime.push(earthquakeTimes[d.States]);
+	});
+
+	state_earthquakes.forEach(function(d){
+		info[d.States] = [d.States, d.Region];
+	});
+
+	var tip = d3.tip()
+		.attr("class", "d3-tip")
+		.offset([0, 0])
+		.html(function(d) {
+			return "<strong style='color:red'>State: </strong><span style='color:white'>"+ info[d.properties.name][0] + "</span><br>" +
+				"<strong style='color:red'>Region: </strong><span style='color:white'>" + info[d.properties.name][1] +"</span><br>" +
+				"<strong style='color:red'>Year: </strong><span style='color:white'>" + year +"</span><br>" +
+				"<strong style='color:red'>Earthquakes: </strong><span style='color:white'>" + earthquakeTimes[d.properties.name] + "</span><br>"
+		});
+	svg.call(tip);
+
+	var form = d3.format(".0f");
+	var indicies = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	var measure = [];
+
+	var logScale = d3.scaleLog()
+		.domain([1, d3.max(allTime)]).range([1,9]);
+
+	indicies.forEach(function(d) {
+		measure.push(form(logScale.invert(d)));
+	})
+
+	var color = d3.scaleThreshold().domain(d3.range(1, 9)).range(colorScheme);
+
+	svg.append("g")
+		.attr("class", "states")
+		.selectAll("path")
+		.data(topojson.feature(
+			states_10m, 
+			states_10m.objects.states).features
+		)
+		.enter().append("path")
+		.attr("fill", function(d) {
+			return color(logScale(earthquakeTimes[d.properties.name]))
+		})
+		.attr("stroke", "#000")
+		.attr("d", path)
+		.on('mouseover', tip.show)
+		.on('mouseout', tip.hide);
+
+	var legend = svg.selectAll("g.legend")
+		.data(measure)
+		.enter()
+		.append("g")
+		.attr("class", "legend");
+	
+	legend.append("text")
+		.attr("class", "caption")
+		.attr("x", width-150)
+		.attr("y", 30)
+		.attr("fill", "#000")
+		.attr("text-anchor", "start")
+		.style("font-size", "22px")
+		.text("Earthquake Frequency");
+
+	legend.append("text")
+		.attr("x", width - 70)
+		.attr("y", function(d, i){
+			return 17+(i + 2) * 25;
+		})
+		.style("font-size", "20px")
+		.text(function(d, i){
+			return measure[i]
+		});
+
+	legend.append("rect")
+		.attr("x", width-100)
+		.attr("y", function(d, i){
+			return (i + 2) * 25
+		})
+		.attr("width",20)
+		.attr("height",20)
+		.style("", "middle")
+		.style("fill", function(d){
+			return color(logScale(d))
+		})
+		.style("opacity", 1.0);
+}
+
+	// rliang37
+	// Rongguo Liang
+	svg.append("text")
+		.attr("x", width-100)
+		.attr("y", height-100)
+		.style("font-size", "20px")
+		.attr("font-weight", "bold")
+		.text("rliang37");
+
+</script>
+
+</body>
+
+</html>

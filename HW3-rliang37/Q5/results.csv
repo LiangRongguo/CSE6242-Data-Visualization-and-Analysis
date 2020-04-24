@@ -1,0 +1,22 @@
+Parameter,Value
+GTID, rliang37
+1_Mean Absolute Error,1656.147651
+1_Root Mean Squared Error,2456.983209
+1_Relative Absolute Error,0.276606
+1_Relative Squared Error,0.089608
+1_Coefficient of Determination,0.910392
+2_Mean Absolute Error,1587.975994
+2_Root Mean Squared Error,2502.355872
+2_Relative Absolute Error,0.254917
+2_Relative Squared Error,0.082756
+2_Coefficient of Determination,0.917244
+3_Root Mean Squared Error (RMSE) for 1st fold,2087.23492
+3_Root Mean Squared Error (RMSE) for 2nd fold,2500.921831
+3_Root Mean Squared Error (RMSE) for 3rd fold,1561.456975
+3_Root Mean Squared Error (RMSE) for 4th fold,1620.676323
+3_Root Mean Squared Error (RMSE) for 5th fold,1414.251621
+3_Coefficient of Determination for 1st fold,0.896338
+3_Coefficient of Determination for 2nd fold,0.885288
+3_Coefficient of Determination for 3rd fold,0.882069
+3_Coefficient of Determination for 4th fold,0.909222
+3_Coefficient of Determination for 5th fold,0.897845

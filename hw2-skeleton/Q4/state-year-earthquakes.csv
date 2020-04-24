@@ -1,0 +1,251 @@
+state,region,year,count
+Alabama,South,2011,1
+Alabama,South,2012,0
+Alabama,South,2013,0
+Alabama,South,2014,2
+Alabama,South,2015,6
+Alaska,West,2011,1409
+Alaska,West,2012,1166
+Alaska,West,2013,1329
+Alaska,West,2014,1296
+Alaska,West,2015,1575
+Arizona,West,2011,7
+Arizona,West,2012,4
+Arizona,West,2013,3
+Arizona,West,2014,31
+Arizona,West,2015,10
+Arkansas,South,2011,44
+Arkansas,South,2012,4
+Arkansas,South,2013,4
+Arkansas,South,2014,1
+Arkansas,South,2015,0
+California,West,2011,195
+California,West,2012,243
+California,West,2013,240
+California,West,2014,191
+California,West,2015,130
+Colorado,West,2011,23
+Colorado,West,2012,7
+Colorado,West,2013,2
+Colorado,West,2014,13
+Colorado,West,2015,7
+Connecticut,Northeast,2011,0
+Connecticut,Northeast,2012,0
+Connecticut,Northeast,2013,0
+Connecticut,Northeast,2014,0
+Connecticut,Northeast,2015,1
+Delaware,South,2011,0
+Delaware,South,2012,0
+Delaware,South,2013,0
+Delaware,South,2014,0
+Delaware,South,2015,0
+Florida,South,2011,0
+Florida,South,2012,0
+Florida,South,2013,0
+Florida,South,2014,0
+Florida,South,2015,0
+Georgia,South,2011,0
+Georgia,South,2012,0
+Georgia,South,2013,0
+Georgia,South,2014,0
+Georgia,South,2015,0
+Hawaii,West,2011,34
+Hawaii,West,2012,40
+Hawaii,West,2013,30
+Hawaii,West,2014,26
+Hawaii,West,2015,53
+Idaho,West,2011,4
+Idaho,West,2012,4
+Idaho,West,2013,11
+Idaho,West,2014,31
+Idaho,West,2015,38
+Illinois,Midwest,2011,0
+Illinois,Midwest,2012,2
+Illinois,Midwest,2013,1
+Illinois,Midwest,2014,0
+Illinois,Midwest,2015,1
+Indiana,Midwest,2011,0
+Indiana,Midwest,2012,3
+Indiana,Midwest,2013,0
+Indiana,Midwest,2014,0
+Indiana,Midwest,2015,0
+Iowa,Midwest,2011,0
+Iowa,Midwest,2012,0
+Iowa,Midwest,2013,0
+Iowa,Midwest,2014,0
+Iowa,Midwest,2015,0
+Kansas,Midwest,2011,0
+Kansas,Midwest,2012,0
+Kansas,Midwest,2013,2
+Kansas,Midwest,2014,42
+Kansas,Midwest,2015,60
+Kentucky,South,2011,0
+Kentucky,South,2012,2
+Kentucky,South,2013,0
+Kentucky,South,2014,0
+Kentucky,South,2015,0
+Louisiana,South,2011,0
+Louisiana,South,2012,0
+Louisiana,South,2013,0
+Louisiana,South,2014,0
+Louisiana,South,2015,0
+Maine,Northeast,2011,0
+Maine,Northeast,2012,1
+Maine,Northeast,2013,1
+Maine,Northeast,2014,0
+Maine,Northeast,2015,0
+Maryland,South,2011,0
+Maryland,South,2012,0
+Maryland,South,2013,0
+Maryland,South,2014,0
+Maryland,South,2015,0
+Massachusetts,Northeast,2011,0
+Massachusetts,Northeast,2012,0
+Massachusetts,Northeast,2013,0
+Massachusetts,Northeast,2014,0
+Massachusetts,Northeast,2015,0
+Michigan,Midwest,2011,0
+Michigan,Midwest,2012,0
+Michigan,Midwest,2013,0
+Michigan,Midwest,2014,0
+Michigan,Midwest,2015,2
+Minnesota,Midwest,2011,0
+Minnesota,Midwest,2012,0
+Minnesota,Midwest,2013,0
+Minnesota,Midwest,2014,1
+Minnesota,Midwest,2015,0
+Mississippi,South,2011,0
+Mississippi,South,2012,0
+Mississippi,South,2013,0
+Mississippi,South,2014,0
+Mississippi,South,2015,3
+Missouri,Midwest,2011,3
+Missouri,Midwest,2012,2
+Missouri,Midwest,2013,0
+Missouri,Midwest,2014,1
+Missouri,Midwest,2015,5
+Montana,West,2011,11
+Montana,West,2012,9
+Montana,West,2013,14
+Montana,West,2014,29
+Montana,West,2015,19
+Nebraska,Midwest,2011,0
+Nebraska,Midwest,2012,1
+Nebraska,Midwest,2013,0
+Nebraska,Midwest,2014,0
+Nebraska,Midwest,2015,3
+Nevada,West,2011,86
+Nevada,West,2012,22
+Nevada,West,2013,34
+Nevada,West,2014,161
+Nevada,West,2015,172
+New Hampshire,Northeast,2011,0
+New Hampshire,Northeast,2012,0
+New Hampshire,Northeast,2013,0
+New Hampshire,Northeast,2014,0
+New Hampshire,Northeast,2015,0
+New Jersey,Northeast,2011,0
+New Jersey,Northeast,2012,0
+New Jersey,Northeast,2013,0
+New Jersey,Northeast,2014,0
+New Jersey,Northeast,2015,0
+New Mexico,West,2011,7
+New Mexico,West,2012,3
+New Mexico,West,2013,6
+New Mexico,West,2014,3
+New Mexico,West,2015,12
+New York,Northeast,2011,1
+New York,Northeast,2012,0
+New York,Northeast,2013,0
+New York,Northeast,2014,0
+New York,Northeast,2015,2
+North Carolina,South,2011,0
+North Carolina,South,2012,0
+North Carolina,South,2013,0
+North Carolina,South,2014,1
+North Carolina,South,2015,0
+North Dakota,Midwest,2011,0
+North Dakota,Midwest,2012,1
+North Dakota,Midwest,2013,0
+North Dakota,Midwest,2014,0
+North Dakota,Midwest,2015,0
+Ohio,Midwest,2011,3
+Ohio,Midwest,2012,0
+Ohio,Midwest,2013,1
+Ohio,Midwest,2014,1
+Ohio,Midwest,2015,0
+Oklahoma,South,2011,63
+Oklahoma,South,2012,34
+Oklahoma,South,2013,103
+Oklahoma,South,2014,585
+Oklahoma,South,2015,888
+Oregon,West,2011,0
+Oregon,West,2012,4
+Oregon,West,2013,2
+Oregon,West,2014,4
+Oregon,West,2015,3
+Pennsylvania,Northeast,2011,0
+Pennsylvania,Northeast,2012,0
+Pennsylvania,Northeast,2013,0
+Pennsylvania,Northeast,2014,0
+Pennsylvania,Northeast,2015,0
+Rhode Island,Northeast,2011,0
+Rhode Island,Northeast,2012,0
+Rhode Island,Northeast,2013,0
+Rhode Island,Northeast,2014,0
+Rhode Island,Northeast,2015,0
+South Carolina,South,2011,0
+South Carolina,South,2012,0
+South Carolina,South,2013,0
+South Carolina,South,2014,3
+South Carolina,South,2015,0
+South Dakota,Midwest,2011,3
+South Dakota,Midwest,2012,1
+South Dakota,Midwest,2013,1
+South Dakota,Midwest,2014,1
+South Dakota,Midwest,2015,0
+Tennessee,South,2011,0
+Tennessee,South,2012,4
+Tennessee,South,2013,1
+Tennessee,South,2014,1
+Tennessee,South,2015,1
+Texas,South,2011,18
+Texas,South,2012,11
+Texas,South,2013,16
+Texas,South,2014,8
+Texas,South,2015,21
+Utah,West,2011,16
+Utah,West,2012,16
+Utah,West,2013,6
+Utah,West,2014,10
+Utah,West,2015,4
+Vermont,Northeast,2011,0
+Vermont,Northeast,2012,0
+Vermont,Northeast,2013,0
+Vermont,Northeast,2014,0
+Vermont,Northeast,2015,0
+Virginia,South,2011,7
+Virginia,South,2012,4
+Virginia,South,2013,0
+Virginia,South,2014,1
+Virginia,South,2015,0
+Washington,West,2011,14
+Washington,West,2012,6
+Washington,West,2013,18
+Washington,West,2014,6
+Washington,West,2015,11
+West Virginia,South,2011,0
+West Virginia,South,2012,0
+West Virginia,South,2013,1
+West Virginia,South,2014,0
+West Virginia,South,2015,0
+Wisconsin,Midwest,2011,0
+Wisconsin,Midwest,2012,0
+Wisconsin,Midwest,2013,0
+Wisconsin,Midwest,2014,0
+Wisconsin,Midwest,2015,0
+Wyoming,West,2011,6
+Wyoming,West,2012,9
+Wyoming,West,2013,73
+Wyoming,West,2014,179
+Wyoming,West,2015,198

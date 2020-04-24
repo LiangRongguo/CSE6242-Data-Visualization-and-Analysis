@@ -1,0 +1,40 @@
+.d3-tip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(43, 43, 43, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+  /* Style northward tooltips specifically */
+.d3-tip.n:after {
+    margin: -10px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+#t {
+    display: table;
+}
+
+#t-Year {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#slider-year {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.counties {
+    fill: none;
+    stroke: rgb(90, 88, 88);
+    stroke-linejoin: round;
+}
+.states {
+    fill: none;
+    stroke: rgb(90, 88, 88);
+    stroke-linejoin: round;
+}

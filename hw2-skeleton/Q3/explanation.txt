@@ -1,0 +1,5 @@
+In explanation.txt, explain when we may want to use such nonlinear scales as square root scale and log scale in charts, in no more than 50 words.
+
+Linear graphs are scaled so that equal vertical distances represent the same absolute-dollar-value change. A drop from $10,000 to $9,000, for example, is represented in the same way as a drop from $100,000 to $99,000.
+However, nonlinear scales , such as the logarithmic scale reveals percentage changes. A change from 100 to 200, for example, is presented in the same way as a change from 1,000 to 2,000.
+

@@ -1,0 +1,25 @@
+/* 13. Basic Styling with CSS */
+/* Style the lines by removing the fill and applying a stroke */
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+} 
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+.focus circle {
+    fill: none;
+    stroke: steelblue;
+}
+.dot {
+    fill: #ffab00;
+    stroke: #fff;
+}
+@media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}

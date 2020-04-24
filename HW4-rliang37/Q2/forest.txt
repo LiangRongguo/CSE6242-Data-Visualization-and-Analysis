@@ -1,0 +1,10 @@
+1. What is the main reason to use a random forest versus a decision tree?
+	Random forest tree is better than random forest in the aspect of accuracy. The main problems and challenges for decision tree are the bias caused by data and overfitting while the random forest can get rid of these.
+
+2. How long did your random forest take to run? (in seconds)
+	23.150130 second
+
+3. What accuracy (to two decimal places, xx.xx%) were you able to obtain?
+	70.42%
+
+

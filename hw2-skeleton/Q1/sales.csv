@@ -1,0 +1,101 @@
+Region,Item Type,Sales Channel,Order Date,Units Sold,Total Profit
+Australia and Oceania,Baby Food,Offline,5/28/2010,9925,951410.5
+Central America and the Caribbean,Cereal,Online,8/22/2012,2804,248406.36
+Europe,Office Supplies,Offline,5/2/2014,1779,224598.75
+Sub-Saharan Africa,Fruits,Online,6/20/2014,8102,19525.82
+Sub-Saharan Africa,Office Supplies,Offline,2/1/2013,5062,639077.5
+Australia and Oceania,Baby Food,Online,2/4/2015,2974,285087.64
+Sub-Saharan Africa,Household,Offline,4/23/2011,4187,693911.51
+Sub-Saharan Africa,Vegetables,Online,7/17/2012,8082,510216.66
+Sub-Saharan Africa,Personal Care,Offline,7/14/2015,6070,152114.2
+Sub-Saharan Africa,Cereal,Online,4/18/2014,6593,584073.87
+Asia,Vegetables,Online,6/24/2011,124,7828.12
+Sub-Saharan Africa,Clothes,Offline,8/2/2014,4168,306097.92
+Asia,Clothes,Online,1/13/2017,8263,606834.72
+Central America and the Caribbean,Household,Offline,2/8/2017,8974,1487261.02
+Asia,Personal Care,Offline,2/19/2014,4901,122819.06
+Europe,Clothes,Online,4/23/2012,1673,122865.12
+Asia,Cosmetics,Offline,11/19/2016,6952,1208744.24
+Sub-Saharan Africa,Beverages,Offline,4/1/2015,5430,85033.8
+Asia,Household,Offline,12/30/2010,3830,634745.9
+Australia and Oceania,Meat,Online,7/31/2012,5908,337937.6
+Europe,Baby Food,Online,5/14/2014,7450,714157
+Europe,Baby Food,Online,7/31/2015,1273,122029.78
+Central America and the Caribbean,Snacks,Online,6/30/2016,2225,122686.5
+Australia and Oceania,Fruits,Online,9/8/2014,2187,5270.67
+Europe,Personal Care,Online,5/7/2016,5070,127054.2
+Europe,Cosmetics,Online,5/22/2017,1815,315574.05
+Australia and Oceania,Fruits,Online,10/13/2014,5398,13009.18
+Sub-Saharan Africa,Fruits,Online,5/7/2010,5822,14031.02
+Europe,Beverages,Offline,7/18/2014,5124,80241.84
+Sub-Saharan Africa,Household,Offline,5/26/2012,2370,392780.1
+Europe,Cosmetics,Offline,9/17/2012,8661,1505888.07
+Sub-Saharan Africa,Personal Care,Offline,12/29/2013,2125,53252.5
+Australia and Oceania,Office Supplies,Online,10/27/2015,2924,369155
+Asia,Household,Offline,1/16/2015,8250,1367272.5
+Sub-Saharan Africa,Snacks,Online,2/25/2017,7327,404010.78
+Central America and the Caribbean,Personal Care,Offline,5/8/2017,6409,160609.54
+Middle East and North Africa,Fruits,Online,11/22/2011,3784,9119.44
+Sub-Saharan Africa,Meat,Online,1/14/2017,4767,272672.4
+Asia,Office Supplies,Online,4/1/2012,6708,846885
+Europe,Office Supplies,Online,2/16/2012,3987,503358.75
+Sub-Saharan Africa,Personal Care,Online,3/11/2017,3015,75555.9
+Middle East and North Africa,Cosmetics,Online,2/6/2010,7234,1257775.58
+Sub-Saharan Africa,Cereal,Offline,6/7/2012,2117,187545.03
+Europe,Vegetables,Online,10/6/2012,171,10795.23
+Asia,Clothes,Online,11/14/2015,5930,435499.2
+Sub-Saharan Africa,Cereal,Offline,3/29/2016,962,85223.58
+Europe,Cosmetics,Online,12/31/2016,8867,1541705.29
+Europe,Personal Care,Online,12/23/2010,273,6841.38
+Europe,Clothes,Offline,10/14/2014,7842,575916.48
+Sub-Saharan Africa,Office Supplies,Offline,1/11/2012,1266,159832.5
+Europe,Clothes,Online,2/2/2010,2269,166635.36
+Sub-Saharan Africa,Fruits,Online,8/18/2013,9606,23150.46
+Middle East and North Africa,Cereal,Online,3/25/2013,4063,359941.17
+Sub-Saharan Africa,Office Supplies,Offline,11/26/2011,3457,436446.25
+Sub-Saharan Africa,Fruits,Offline,9/17/2013,7637,18405.17
+Sub-Saharan Africa,Clothes,Online,6/8/2012,3482,255718.08
+Australia and Oceania,Clothes,Offline,6/30/2010,9905,727423.2
+Europe,Cosmetics,Offline,2/23/2015,2847,495007.89
+Europe,Household,Online,1/5/2012,282,46735.86
+Sub-Saharan Africa,Cosmetics,Offline,4/7/2014,7215,1254472.05
+Australia and Oceania,Cereal,Offline,6/9/2013,682,60418.38
+Europe,Baby Food,Online,6/26/2013,4750,455335
+Sub-Saharan Africa,Office Supplies,Online,11/7/2011,5518,696647.5
+Middle East and North Africa,Clothes,Offline,10/30/2010,6116,449159.04
+Central America and the Caribbean,Cosmetics,Offline,10/13/2013,1705,296448.35
+Sub-Saharan Africa,Cosmetics,Offline,10/11/2013,4477,778415.99
+Sub-Saharan Africa,Personal Care,Offline,7/8/2012,8656,216919.36
+Central America and the Caribbean,Clothes,Offline,7/25/2016,5498,403773.12
+Europe,Office Supplies,Offline,10/24/2010,8287,1046233.75
+Sub-Saharan Africa,Clothes,Offline,4/25/2015,7342,539196.48
+Asia,Office Supplies,Online,4/23/2013,5010,632512.5
+Middle East and North Africa,Fruits,Online,8/14/2015,673,1621.93
+Sub-Saharan Africa,Beverages,Online,5/26/2011,5741,89904.06
+Sub-Saharan Africa,Cereal,Online,5/20/2017,8656,766835.04
+Middle East and North Africa,Cosmetics,Offline,7/5/2013,9892,1719922.04
+North America,Household,Offline,11/6/2014,6954,1152486.42
+Australia and Oceania,Beverages,Online,10/28/2014,9379,146875.14
+Asia,Vegetables,Offline,9/15/2011,3732,235601.16
+Europe,Baby Food,Offline,5/29/2012,8614,825738.04
+Australia and Oceania,Cosmetics,Online,7/20/2013,9654,1678540.98
+Europe,Household,Offline,10/21/2012,4513,747939.49
+Middle East and North Africa,Clothes,Online,9/18/2012,7884,579000.96
+Middle East and North Africa,Cosmetics,Online,11/15/2016,6489,1128242.43
+Sub-Saharan Africa,Snacks,Online,1/4/2011,4085,225246.9
+Sub-Saharan Africa,Vegetables,Online,3/18/2012,6457,407630.41
+North America,Personal Care,Offline,2/17/2012,6422,160935.32
+Sub-Saharan Africa,Beverages,Offline,1/16/2011,8829,138262.14
+Sub-Saharan Africa,Baby Food,Offline,2/3/2014,5559,532885.74
+Middle East and North Africa,Fruits,Online,4/30/2012,522,1258.02
+Europe,Beverages,Offline,10/23/2016,4660,72975.6
+Sub-Saharan Africa,Office Supplies,Offline,12/6/2016,948,119685
+Australia and Oceania,Beverages,Offline,7/7/2014,9389,147031.74
+Middle East and North Africa,Office Supplies,Online,6/13/2012,2021,255151.25
+Europe,Cosmetics,Online,11/26/2010,7910,1375311.7
+Central America and the Caribbean,Beverages,Offline,2/8/2011,8156,127722.96
+Sub-Saharan Africa,Clothes,Online,7/26/2011,888,65214.72
+Asia,Fruits,Offline,11/11/2011,6267,15103.47
+Sub-Saharan Africa,Vegetables,Offline,6/1/2016,1485,93748.05
+North America,Personal Care,Offline,7/30/2015,5767,144521.02
+Sub-Saharan Africa,Household,Offline,2/10/2012,5367,889472.91

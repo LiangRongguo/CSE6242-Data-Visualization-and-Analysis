@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<head>
+<meta charset ="utf-8">
+<title>
+    Q5 rliang37 CSE6242
+</title>
+<script src="../lib/d3.v5.min.js"></script>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <label for="select_year">Select Year</label>
+    <select id="select_year"></select>
+</body>
+<script>
+    var margin = {
+        top: 50, 
+        right: 50, 
+        bottom: 50, 
+        left: 50
+    };
+
+    var width = window.innerWidth - margin.left - margin.right - 120; // Use the window's width 
+    var height = window.innerHeight - margin.top - margin.bottom - 100; // Use the window's height
+    
+    d3.csv("earthquake.csv").then(function(inputData) {
+        // svg object
+        var svg = d3.select("body")
+                    .append("svg")
+                    .attr("id", "chart")
+                    .attr("width", window.innerWidth)
+                    .attr("height", window.innerHeight)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // legend levels
+        var levels = ["7.0+", "6_6.9", "5_5.9"];
+        // color for each level
+        var colors = ["#b33040", "#d25c4d", "#f2b447"]
+
+        var keys = inputData.columns.slice(2);
+
+        // add dropdown options to dropdown list
+        var year   = [...new Set(
+            inputData.map(d => d.Year))
+        ];
+        d3.select("#select_year")
+            .selectAll("option")
+            .data(year)
+            .enter()
+            .append("option")
+            .text(d => d)
+
+        var states = [...new Set(
+            inputData.map(d => d.State))
+        ];
+
+        console.log("input data: ");
+        console.log(inputData);
+        console.log("keys: " + keys);
+        console.log("years: " + year);
+        console.log("states: " + states);
+        
+        // Legend
+        svg.selectAll("mydots")
+            .data(levels)
+            .enter()
+            .append("circle")
+                .attr("class", "data-circle")
+                .attr("r", 10)
+                .attr("cx", width-145)
+                .attr("cy", function(d,i){
+                    return 20 + i * 25
+                }) 
+                .style("fill", function(d, i){
+                    return colors[i]
+                });
+
+        svg.selectAll("mylabels")
+            .data(levels)
+            .enter()
+            .append("text")
+                .attr("x", width-130)
+                .attr("y", function(d,i){
+                    return 22 + i*25
+                }) 
+                .attr("text-anchor", "left")
+                .style("alignment-baseline", "middle")
+                .style("fill", "black")
+                .text(function(d){
+                    return d
+                })
+
+        var x = d3.scaleBand()
+            .range([margin.left, width - margin.right])
+            .padding(0.1);
+        console.log(x);
+        
+        var axis_X = svg.append("g")
+            .attr("transform", 'translate(0,' +  (height - margin.bottom) + ')')
+            .attr("class", "x-axis")
+            .append("text")
+            .style("fill", "black")
+            .style("font-size", "20px")
+            .attr("font-weight", "bold") 
+            .text("State")
+            .attr("x", width/2)
+            .attr("y", 50);
+        console.log(axis_X);
+
+        var y = d3.scaleLinear()
+            .rangeRound([height - margin.bottom, margin.top]);
+        console.log(y);
+        
+        var axis_Y = svg.append("g")
+            .attr("transform", 'translate(' + margin.left + ',0)')
+            .attr("class", "y-axis")
+            .append("text")
+            .attr("transform", "rotate(270 -60,275)")
+            .style("fill", "black")
+            .style("font-size", "15px") 
+            .text("Number of Earthquakes")
+            .attr("x", 10)
+            .attr("y", height/2);
+        console.log(axis_Y);
+
+        var z = d3.scaleOrdinal()
+            .range(colors)
+            .domain(levels);
+        change(d3.select("#select_year").property("value"), speed=0); // no need to add speed
+        console.log(z);
+
+        // update1 value when selected from dropdown list
+        var select = d3.select("#select_year")
+            .on("change", function() {
+                change(this.value, speed=500)
+            })
+            
+        // Title
+        svg.append("text")
+            .attr("text-anchor", "middle")
+            .style("font-size", "25px") 
+            .attr("font-weight", "bold")
+            .text("Visualizing Earthquake Counts by State")
+            .attr("x", (width / 2))             
+            .attr("y", 10);
+
+        // GT ID
+        svg.append("text")
+            .attr("x", width - 150)
+            .attr("y", height + 20)
+            .attr("font-weight", "bold")
+            .style("font-size", "18px")
+            .text("rliang37");
+        
+            console.log("rliang37");
+        
+        // -------------------------------------------------
+        function drawBarAndData(data, speed=1000) { // default speed 1000
+            console.log("speed: " + speed);
+            var cluster = svg
+                .selectAll("g.layer")
+                .data(
+                    d3.stack()
+                      .keys(keys)(data), function(d) {
+                          return z(d.key);
+                      })
+
+            cluster.exit().remove()
+
+            cluster.enter().append("g")
+                .classed("layer", true)
+                .attr("fill", function(d) {
+                    return z(d.key);
+                });
+
+            var bars = svg.selectAll("g.layer")
+                          .selectAll("rect")
+                          .data(function(d) {return d}, 
+                                function(d) {return d.data.State}
+                            );
+
+            bars.exit().remove();
+
+            bars.enter()
+                .append("rect")
+                .attr("width", x.bandwidth())
+                .merge(bars)
+                .transition()
+                .duration(speed)
+                .attr("x", function(d) {
+                    return x(d.data.State);
+                })
+                .attr("y", function(d) {
+                    return y(d[1]);
+                })
+                .attr("height", function(d) {
+                    return y(d[0]) - y(d[1]);
+                });
+
+            console.log("done drawing bars");
+
+            var text = svg.selectAll(".text")
+                .data(data, d => d.State);
+
+            text.exit().remove();
+
+            text.enter().append("text")
+                .attr("class", "text")
+                .merge(text)
+                .transition()
+                .duration(speed)
+                .attr("x", function(d) {
+                    return x(d.State) + x.bandwidth() / 2;
+                })
+                .attr("y", function(d) {
+                    return y(d.sum) - 5;
+                })
+                .text(function(d) {
+                    return d.sum;
+                })
+                .attr("text-anchor", "middle")
+            
+            console.log("done drawing data");
+
+        }
+
+        function change(input, speed) {
+            var intput_data = inputData.filter(
+                function(flag) {
+                    return flag.Year == input;
+            })
+            
+            x.domain(
+                intput_data.map(d => d.State)
+            );
+
+            intput_data.forEach(function(d) {
+                // sum up
+                d.sum = d3.sum(keys, k => +d[k])
+                return d
+            })
+
+            y.domain([
+                0, 
+                d3.max(intput_data, function(d) {
+                    return d3.sum(keys, k => +d[k])
+                })
+            ]
+            ).nice();
+
+            svg.selectAll(".x-axis")
+                .transition()
+                .duration(speed)
+                .call(d3.axisBottom(x).tickSizeOuter(5));
+
+            svg.selectAll(".y-axis")
+                .transition()
+                .duration(speed)
+                .call(d3.axisLeft(y)
+                .ticks(null, "s"))
+
+            drawBarAndData(intput_data, speed);
+
+            console.log("done update..");
+
+            return;
+        }
+    })      
+</script>
+</html> 

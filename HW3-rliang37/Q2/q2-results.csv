@@ -1,0 +1,33 @@
+﻿Part 2: top-5 most popular drop locations,,
+DOLocationID,number_of_dropoffs,
+61,5937,
+138,5146,
+239,4133,
+244,4006,
+42,3859,
+Part 3: top-5 most popular pickup locations,,
+PULocationID,number_of_pickups,
+74,17360,
+75,13299,
+244,9958,
+41,9645,
+82,9306,
+Part 4: top-5 most popular pickup-dropoff pairs,,
+PULocationID,DOLocationID,count of pickup-dropoff
+74,238,1370
+74,263,1197
+74,236,1192
+74,239,992
+95,121,987
+"Part 5: the number of drop-offs over the period from January 1, 2019 (inclusive of January 1) to January 5, 2019 (inclusive of January 5)",,
+day,total_activity,
+01-Jan-19,7885,
+02-Jan-19,9163,
+03-Jan-19,10061,
+04-Jan-19,10394,
+05-Jan-19,9425,
+Part 6: top-3 locations with the maximum overall activity,,
+locationID,total_activity,
+74,20292,
+75,16326,
+244,13964,

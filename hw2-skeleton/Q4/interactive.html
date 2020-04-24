@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../lib/d3.v5.min.js"></script>
+        <style type="text/css">
+        .line {
+            fill: none;
+            stroke: #ffab00;
+            stroke-width: 3;
+        }
+        .overlay {
+            fill: none;
+            pointer-events: all;
+        }
+        .dot {
+            fill: #ffab00;
+            stroke: #fff;
+        }
+        
+        .foucs circle {
+            fill: none;
+            stroke: steelblue;
+        }
+        </style>
+    </head>
+
+    <body></body>
+
+    <script type="text/javascript">
+        var margin = {
+            top: 100,
+            right: 100,
+            bottom: 100, 
+            left: 100
+        };
+        var width = 900 - margin.left - margin.right;
+        var height = 500 - - margin.top - margin.bottom;
+        var colors = {
+            'Midwest': '#0099CC', 
+            'Northeast': '#CC0033', 
+            'South': '#99CC33', 
+            'West': '#FFCC33'
+        };
+
+        d3.csv("state-year-earthquakes.csv")
+            .then(function(data) {
+                var dataNest = d3.nest()
+                    .key(function(d) {
+                        return d.region;
+                    })
+                    .key(function(d) {
+                        return +d.year;
+                    })
+                    .rollup(function(leaves) {
+                        return {
+                            "states": leaves,
+                            "sum": d3.sum(leaves, function(d) {
+                                return d.count;
+                            })
+                        }
+                    })
+                    .entries(data);
+                
+                console.log("dataNest",dataNest);
+                
+                var svg = d3.select("body").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                
+                var xScale = d3
+                    .scaleTime()
+                    .domain([new Date("2011"),new Date("2015")])
+                    .range([ 0, width ]);
+                
+                var yScale = d3
+                    .scaleLinear()
+                    .domain( [ 0, 2600])
+                    .range([ height, 0]);
+                
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(xScale).ticks(d3.timeYear.every(1)));
+                
+                svg.append("g")
+                    .attr("class", "y axis")
+                    .call(d3.axisLeft(yScale));  
+                
+                var formatTime = d3.timeParse("%Y");
+
+                var line = d3.line()
+                    .x(function(d) {
+                        return xScale(formatTime(d.key)) })
+                    .y(function(d) {
+                        return yScale(d.value.sum) 
+                    });
+                
+                svg.selectAll("lines")
+                    .data(dataNest)
+                    .enter()
+                    .append("g")
+                    .attr("class", "path")
+                    .append("path")
+                    .attr("d", function(d){ 
+                        return line(d.values)
+                    })
+                    .attr("stroke", function(d){ 
+                        return colors[d.key]
+                    })
+                    .style("stroke-width", 3)
+                    .style("fill", "none");
+                
+                var legend = svg.selectAll(".legend")
+                    .data(dataNest)
+                    .enter().append("g")
+                    .attr("class", "legend");
+
+                legend.append("circle")
+                    .attr("class","legend")
+                    .attr("cx", width-margin.right-40)
+                    .attr("cy", function(d,i){ 
+                        return 12 + i*20
+                    })
+                    .attr("r", 6)
+                    .attr("width", 30)
+                    .attr("height", 20)
+                    .style("fill", function(d){ 
+                        return colors[d.key]}
+                    );
+                
+                legend.append("text")
+                    .attr("class","legend")
+                    .attr("x", width-margin.right-30 )
+                    .attr("y", function(d,i){
+                        return 14 + i*20
+                    })
+                    .attr("font-size","15px")
+                    .text(function(d){
+                        return d.key
+                    })
+                    .style("alignment-baseline", "middle");
+                
+                svg.append("text")
+                    .attr("class", "title")
+                    .attr("x", width/2)
+                    .attr("y", -15)
+                    .style("text-anchor","middle")
+                    .attr("font-size", "30px")
+                    .style("font-weight", "bold")
+                    .text("US Earthquakes by Region 2011-2015");
+                
+                svg.append("text")
+                    .attr("class", "title")
+                    .attr("x", width/2)
+                    .attr("y", 15)
+                    .style("text-anchor","middle")
+                    .attr("font-size", "15px")
+                    .text("rliang37");
+                
+                var svg1 = d3
+                    .select("body")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                
+                var mouseoverHandler = function(d,i) {
+                    var Syear = d3.select(this)._groups[0][0].__data__.value.states[0].year;
+                    var Sregion = d3.select(this)._groups[0][0].__data__.value.states[0].region;
+                    console.log(Syear);
+                    console.log(Sregion);
+
+                    var dataBar = []
+                    data.map(function (d) {
+                        if (d.year == Syear && d.region == Sregion) {
+                            dataBar.push({
+                                state: d.state, 
+                                year: d.year, 
+                                value: +d.count
+                            })
+                        }
+                    });
+
+                    dataBar.sort(function (a, b) {
+                        return d3.ascending(a.value, b.value)
+                    });
+                    
+                    console.log(dataBar);
+
+                    var myStates = d3
+                        .map(dataBar, function(d) {
+                            return d.state;
+                        })
+                        .keys();
+
+                    var maxCount = d3.max(dataBar, function(d){return d.value;})
+
+                    console.log(myStates);
+                    console.log(maxCount);
+
+                    d3.select(this)
+                        .attr("r", 10);
+
+                    var xBarScale = d3
+                        .scaleLinear()
+                        .domain([0, maxCount])
+                        .range([ 0, width ]);
+
+                    var yBarScale = d3.scaleBand()
+                        .range([ height, 0 ])
+                        .domain(myStates)
+                        .padding(0.05);
+
+                    svg1.append("g")
+                        .attr("class", "x axis")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(xBarScale));
+
+                    svg1.append("g")
+                        .attr("class", "y axis")
+                        .call(d3.axisLeft(yBarScale));
+
+                    var formatTime = d3.timeParse("%Y");
+
+                    svg1.selectAll("rect")
+                        .data(dataBar)
+                        .enter()
+                        .append("rect")
+                        .attr("x", 0)
+                        .attr("y", function (d) {
+                            return yBarScale(d.state);
+                        })
+                        .attr("width", function (d) {
+                            return xBarScale(d.value)
+                        })
+                        .attr("height", yBarScale.bandwidth())
+                        .attr("fill", "#6baed6")
+
+                    svg1.append("text")
+                        .attr("class", "title")
+                        .attr("x", width/2)
+                        .attr("y", -15)
+                        .style("text-anchor","middle")
+                        .attr("font-size", "24px")
+                        .text(Sregion +"ern Region Earthquake "+ Syear);
+
+                    svg1.append("text")
+                        .attr("class", "x axis")
+                        .attr("x", width/2)
+                        .attr("y", height + margin.bottom)
+                        .style("text-anchor","middle")
+                        .attr("font-size", "18px");
+
+                    svg1.append("text")
+                        .attr("class", "y axis")
+                        .attr("x", -height/2 - margin.top)
+                        .attr("y", -50)
+                        .style("text-anchor","middle")
+                        .attr("transform", "rotate(270)")
+                        .attr("font-size", "18px");
+                }
+
+
+
+                var mouseoutHandler = function(d, i) {
+                    svg1.selectAll("*").remove();
+
+                    d3.select(this)
+                        .attr("r", 5)
+                        .attr("fill", function () {
+                            return colors[d.key];
+                        })
+                }
+
+
+                svg.selectAll("myDots")
+                    .data(dataNest)
+                    .enter()
+                    .append('g')
+                    .style("fill", function(d){ return colors[d.key] })
+                    .style("stroke-width", 2)
+                    .style("stroke", "white")
+                    .selectAll("myPoints")
+                    .data(function(d){ return d.values })
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function(d) { return xScale(formatTime(d.key)) } )
+                    .attr("cy", function(d) { return yScale(d.value.sum) } )
+                    .attr("r", 5)
+                    .on("mouseover", mouseoverHandler)
+                    .on("mouseout", mouseoutHandler)
+        });
+
+    </script>
+</html>
