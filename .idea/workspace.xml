@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c512f5e-ea86-4126-8db6-dfd09bc7b19d" name="Default Changelist" comment="" />
+    <list default="true" id="2c512f5e-ea86-4126-8db6-dfd09bc7b19d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q1/barchart.png" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q1/barchart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q1/sales.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q1/sales.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q1/table.png" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q1/table.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q2/graph.css" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q2/graph.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q2/graph.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q2/graph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q2/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q2/graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/earthquakes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/earthquakes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/explanation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/explanation.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linechart.css" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linechart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts1.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts2.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts3.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q3/linecharts4.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q3/linecharts4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q4/interactive.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q4/interactive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q4/state-year-earthquakes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q4/state-year-earthquakes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q5/earthquake.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q5/earthquake.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q5/stacked.css" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q5/stacked.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q5/stacked.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q5/stacked.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q6/choropleth.css" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q6/choropleth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q6/choropleth.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q6/choropleth.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q6/state-earthquakes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q6/state-earthquakes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/Q6/states-10m.json" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/Q6/states-10m.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3-dsv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3-dsv.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3-fetch.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3-fetch.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3-scale-chromatic.v1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3-scale-chromatic.v1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3-simple-slider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3-simple-slider.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3-tip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3-tip.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/d3.v5.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/d3.v5.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw2-skeleton/lib/topojson.v2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW2-rliang37/lib/topojson.v2.min.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +44,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Wg9RSdfFB7RSBrXPqCNwd0HzwR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -38,6 +71,18 @@
       <option name="presentableId" value="Default" />
       <updated>1579560362709</updated>
     </task>
+    <task id="LOCAL-00001" summary="CSE6242 homework">
+      <created>1587723461048</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587723461048</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CSE6242 homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSE6242 homework" />
   </component>
 </project>
